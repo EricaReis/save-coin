@@ -1,39 +1,27 @@
-import Modal from 'react-modal';
+import * as Dialog from "@radix-ui/react-dialog";
+import { X } from "phosphor-react";
+import { CloseButton, Content, Overlay } from "./styles";
 
-import {Container} from './styles'
-interface NewTransactionModalProps {
-    isOpen: boolean;
-    onRequestClose: () => void;
-}
+export function NewTransactionModal() {
+  return (
+    <Dialog.Portal>
+      <Overlay>
+        <Content>
+          <Dialog.Title>Nova transação</Dialog.Title>
 
-export function NewTransactionModal({ isOpen, onRequestClose}: NewTransactionModalProps){
-    return (
-        <Modal 
-                isOpen={isOpen} 
-                onRequestClose={onRequestClose}
-                overlayClassName="react-modal-overlay"
-                className="react-modal-content"
-        >
-            <Container>
-                <h2>Cadastrar transação</h2>
+          <CloseButton>
+            <X size={24} />
+          </CloseButton>
 
-                <input
-                    placeholder="Título">
-                </input>
+          <form action="">
+            <input type="text" placeholder="Descrição" required />
+            <input type="number" placeholder="Preço" required />
+            <input type="text" placeholder="Categoria" required />
 
-                <input
-                    type="number"
-                    placeholder="Valor">
-                </input>
-
-                <input
-                    placeholder="Categoria">
-                </input>
-
-                <button type='submit'>
-                    Cadastrar
-                </button>
-            </Container>
-        </Modal>
-    );
+            <button type="submit">Cadastrar</button>
+          </form>
+        </Content>
+      </Overlay>
+    </Dialog.Portal>
+  );
 }
