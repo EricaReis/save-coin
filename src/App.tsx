@@ -20,13 +20,6 @@ export function App() {
         <GlobalStyle />
 
         <Transactions />
-
-        <Dashboard />
-
-        <NewTransactionModal
-          isOpen={isNewTransactionModalOpen}
-          onRequestClose={handleCloseNewTransactionModal}
-        />
       </ThemeProvider>
     </>
   );

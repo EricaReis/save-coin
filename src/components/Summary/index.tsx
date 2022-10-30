@@ -1,32 +1,35 @@
-import incomeImg from '../../assets/income.svg';
-import outcomeImg from '../../assets/income.svg';
-import totalImg from '../../assets/total.svg';
-import { Container } from "./styles";
+import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
+import { SummaryCard, SummaryContainer } from "./styles";
 
 export function Summary() {
-    return(
-        <Container>
-            <div>
-                <header>
-                    <p>Entradas</p>
-                    <img src={incomeImg} alt="Entradas"/>
-                </header>
-                <strong>R$1000,00</strong>
-            </div>
-            <div>
-                <header>
-                    <p>Saídas</p>
-                    <img src={outcomeImg} alt="Saídas"/>
-                </header>
-                <strong>- R$500,00</strong>
-            </div>
-            <div className="highlight-background">
-                <header>
-                    <p>Total</p>
-                    <img src={totalImg} alt="Total"/>
-                </header>
-                <strong>R$500,00</strong>
-            </div>
-        </Container>
-    )
+  return (
+    <SummaryContainer>
+      <SummaryCard>
+        <header>
+          <span>Entradas</span>
+          <ArrowCircleUp size={32} color="#00b37e" />
+        </header>
+
+        <strong>R$17.400,00</strong>
+      </SummaryCard>
+
+      <SummaryCard>
+        <header>
+          <span>Saídas</span>
+          <ArrowCircleDown size={32} color="#f75a68" />
+        </header>
+
+        <strong>R$17.400,00</strong>
+      </SummaryCard>
+
+      <SummaryCard variant="green">
+        <header>
+          <span>Total</span>
+          <CurrencyDollar size={32} color="#fff" />
+        </header>
+
+        <strong>R$17.400,00</strong>
+      </SummaryCard>
+    </SummaryContainer>
+  );
 }
