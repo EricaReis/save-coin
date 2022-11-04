@@ -31,6 +31,22 @@
       "type": "outcome",
       "createdAt": "2022-11-02T21:44:56.381Z",
       "id": 4
+    },
+    {
+      "description": "Salário",
+      "price": 1500,
+      "category": "Renda",
+      "type": "income",
+      "createdAt": "2022-11-02T22:19:16.246Z",
+      "id": 5
+    },
+    {
+      "description": "Colchao ",
+      "price": 400,
+      "category": "Gastos",
+      "type": "outcome",
+      "createdAt": "2022-11-02T22:19:48.539Z",
+      "id": 6
     }
   ]
 }
