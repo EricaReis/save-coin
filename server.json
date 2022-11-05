@@ -47,6 +47,14 @@
       "type": "outcome",
       "createdAt": "2022-11-02T22:19:48.539Z",
       "id": 6
+    },
+    {
+      "description": "Galinhada",
+      "price": 234,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2022-11-05T14:32:13.657Z",
+      "id": 7
     }
   ]
 }

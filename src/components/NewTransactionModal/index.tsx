@@ -11,8 +11,8 @@ import {
   TransactionType,
   TransactionTypeButton,
 } from "./styles";
-import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { useContextSelector } from "use-context-selector";
 
 const newTransactonFormSchema = z.object({
   description: z.string(),
@@ -24,7 +24,17 @@ const newTransactonFormSchema = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactonFormSchema>;
 
 export function NewTransactionModal() {
-  const { createTransaction } = useContext(TransactionsContext);
+  /* Com a implementação do use-context-selector, ao chamar o useContextSelector,
+  vai ser passada uma função junto, que recebe o context e retornar apenas
+  a variável do context que se quer observar */
+
+  const createTransaction = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return context.createTransaction;
+    }
+  );
+
   const {
     control,
     register,
